@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 1</title>
+    </head>
+
+    <body>
+        <h1> Ejercicio 1 </h1>
+        <p> Dado un array de objetos, obtener el objeto con el id 3 </p>
+        <code>
+            const arrNames = [
+                {id: 1, name: 'Pepe'},
+                {id: 2, name: 'Juan'},
+                {id: 3, name: 'Alba'},
+                {id: 4, name: 'Toby'},
+                {id: 5, name: 'Lala'}
+            ]
+        </code>
+    </body>
+
+    <script>
+        const arrNames = [
+            { id: 1, name: 'Pepe' },
+            { id: 2, name: 'Juan' },
+            { id: 3, name: 'Alba' },
+            { id: 4, name: 'Toby' },
+            { id: 5, name: 'Lala' }
+        ]
+
+        const objectId3 = arrNames.find(item => item.id === 3);
+        console.log(objectId3);
+
+    </script>
+
+</html>
