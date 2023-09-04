@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <h1> Ejercicio 7 </h1>
+    <p> Crea una función que retorne los campos de un objeto que equivalgan a un valor “falsy” después de ser ejecutados por una función específica.
+        La función debe tener dos parámetros:
+        <ul>
+            <li> Primer parámetro es un objeto con x número de campos y valores </li>
+            <li> Segundo parametro es una funcion que retorne un booleano, que se tiene que aplicar al objeto del primer parámetro </li>
+        </ul>
+      
+        Ejemplo de uso de la función
+    </p>
+    <code>
+        const result = returnFalsyValues({ a: 1, b: '2', c: 3 }, x => typeof x === 'string')    
+        console.log(result); // {a: 1, c: 3}
+    </code>
+</body>
+
+<script>
+    //los valores falsy evaluan false en un contexto booleano. (listas, cadenas de caracteres...)
+    const myObj = {
+        a: 1,
+        b: 2,
+        c: '3',
+        d: 4
+    }
+
+    function returnFalsyValues(obj, type) {
+        Object.keys(obj).forEach(key => {
+            //miro si el tipo es un string, y si es string lo elimina
+            if(typeof myObj[key] === type) delete myObj[key]
+        })
+        return myObj;
+    }
+
+    const result = returnFalsyValues(myObj, "string")
+    console.log(result);
+</script>
+
+</html>
