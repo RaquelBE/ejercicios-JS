@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <h1> Ejercicio 5 </h1>
+    <p> Dado un array de ciudades, sacar en un nuevo array las ciudades no capitales con unos nuevos parámetros que sean city y isSpain.
+        El valor de isSpain será un booleano indicando si es una ciudad de España.
+        Ejemplo: {city: "Logroño", isSpain: "true"}
+    </p>
+    <code>
+        const arrCities2 = [
+        {city: 'Logroño', country: 'Spain', capital: false},
+        {city: 'Bordeaux', country: 'France', capital: false},
+        {city: 'Madrid', country: 'Spain', capital: true},
+        {city: 'Florence', country: 'Italy', capital: true},
+        {city: 'Oslo', country: 'Norway', capital: true},
+        {city: 'Jaén', country: 'Spain', capital: false}
+        ]
+    </code>
+</body>
+
+<script>
+    const arrCities2 = [
+        { city: 'Logroño', country: 'Spain', capital: false },
+        { city: 'Bordeaux', country: 'France', capital: false },
+        { city: 'Madrid', country: 'Spain', capital: true },
+        { city: 'Florence', country: 'Italy', capital: true },
+        { city: 'Oslo', country: 'Norway', capital: true },
+        { city: 'Jaén', country: 'Spain', capital: false }
+    ]
+
+    //filtra las ciudades que no son capitales y que su capital es España
+    const capitalNonSpain = arrCities2.filter(city => !city.capital && city.country === "Spain");
+    //creo un nuevo array para guardar los datos
+    const arrSpainCities = capitalNonSpain.map(city => ({
+        city: city.city,
+        isSpain: true
+    }));
+    console.log(arrSpainCities);
+</script>
+
+</html>
