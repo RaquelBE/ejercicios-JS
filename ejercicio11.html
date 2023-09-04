@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 11</title>
+</head>
+
+<body>
+    <h1>Ejercicio 11</h1>
+    <p>
+        Crea una función que tome un array como parametro y lo divida en arrays
+        nuevos con tantos elementos como sean especificados.
+    <ul>
+        <li> El primer parámetro es el array entero que se quiere dividir. </li>
+        <li> El segundo parámetro es el número de elementos que deben tener los arrays en los que se divida el array
+            original del primer parámetro.</li>
+    </ul>
+    La función debe tener dos parámetros:
+    </p>
+    <code>
+        const result = splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7], 3);
+        console.log(result); // [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7 ] ]
+    </code>
+</body>
+
+<script>
+    function splitArrayIntoChunks(arr, size) {
+        let myArr = [];
+        for (let i = 0; i < arr.length; i += size) {
+            //cojo una parte del array original con .slice()
+            myArr.push(arr.slice(i, i + size));
+            //agrego (.push()) la parte que he cogido al array vacio que he creado con mi variable myArr.
+        }
+        return myArr;
+    }
+
+    console.log(splitArrayIntoChunks([1, 2, 3, 4, 5, 6, 7], 3));
+</script>
+
+</html>
