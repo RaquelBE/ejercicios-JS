@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <h1> Ejercicio 6 </h1>
+    <p> Crea una función que redondee un número float a un número específico de decimales.
+        La función debe tener dos parámetros:
+    <ul>
+        <li> Primer parámetro es un número float con x decimales </li>
+        <li> Según parámetro es un int que indique el número de decimales al que redondear </li>
+        <li> Evitar usar el método toFixed() </li>
+    </ul>
+    Ejemplo de uso de la función:
+    </p>
+    <code>
+        const roundedResult = roundTo(2.123, 2);
+        console.log(roundedResult); // 2.12
+
+        const roundedResult = roundTo(1.123456789, 6)
+        console.log(roundedResult); // 1.123457
+    </code>
+</body>
+
+<script>
+    //no lo entiendo, he pedido ayuda a un compañero y a google, no entiendo el ejercicio
+    function redondeo(number, decimals) {
+        if (isNaN(number) || isNaN(decimals)) {
+            return NaN;
+        }
+
+        const factorizar = Math.pow(10, decimals);
+        const resultadoRedondeo = Math.round(number * factorizar) / factorizar;
+        return resultadoRedondeo;
+    }
+
+    const numeroOriginal = 3.14159;
+    const decimalesDeseados = 2;
+    const resultado = redondeo(numeroOriginal, decimalesDeseados);
+    console.log(resultado);
+</script>
+
+</html>
