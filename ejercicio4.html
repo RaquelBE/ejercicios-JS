@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <h1> Ejercicio 4 </h1>
+    <p> Dado tres arrays de números, sacar en un nuevo array la intersección de estos.
+    </p>
+    <code>
+        const arrNumber1 = [1,2,3];
+        const arrNumber2 = [1,2,3,4,5];
+        const arrNumber3 = [1,4,7,2];
+    </code>
+</body>
+
+<script>
+    const arrNumber1 = [1, 2, 3];
+    const arrNumber2 = [1, 2, 3, 4, 5];
+    const arrNumber3 = [1, 4, 7, 2];
+
+    //filtrame (.filter) los elementos (element) que estén en el primer array y que estén también incluidos (.include) en el array2 y en el array3
+    //y si cumple toda esa condición, crea un nuevo array con lo que cumpla
+    function newArr(arrNumber1, arrNumber2, arrNumber3) {
+        return arrNumber1.filter(element =>
+            arrNumber2.includes(element) && arrNumber3.includes(element))
+    };
+    console.log(newArr(arrNumber1, arrNumber2, arrNumber3));
+</script>
+
+</html>
