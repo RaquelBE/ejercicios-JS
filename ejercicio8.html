@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <h1> Ejercicio 7 </h1>
+    <p> Crea una función que convierta un número de bytes en un formato con valores legibles ('B', 'KB', 'MB', 'GB',
+        'TB', 'PB', 'EB', 'ZB', 'YB')
+        La función debe tener 2 parámetros:
+
+    <ul>
+        <li> Primer parámetro debe ser el número de bytes </li>
+        <li> Segundo parámetro debe ser un número especificando la cantidad de dígitos a los que se debe truncar el
+            resultado (esto se puede hacer con Number.prototype.toPrecision()).
+            Por defecto, este parámetro debe de tener un valor de 3. </li>
+    </ul>
+
+    Ejemplo de uso de la función
+    </p>
+    <code>
+        const result = fromBytesToFormattedSizeUnits(1000);
+        console.log(result); // 1KB
+        const result = fromBytesToFormattedSizeUnits(123456789);
+        console.log(result); // 123MB
+        const result = fromBytesToFormattedSizeUnits(-12145489451.5932, 5);
+        console.log(result); // -12.145GB
+    </code>
+</body>
+
+<script>
+    function fromBytesToFormattedSizeUnits(bytes, decimal) {
+        if (bytes == 0) return "0 Bytes";
+        //1kilobyte = 1000 bytes.
+        let base = 1000;
+        //si es decimal mostrar solo 3 decimales.
+        let decimals = decimal || 3;
+        let units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        //calcula el indice de la unidad adecuada.
+        let i = Math.floor(Math.log(Math.abs(bytes)) / Math.log(base));
+        //hace la conversión y lo formatea. Math.pow (calcula la cantidad de bytes); .toPrecisior(decimals) (redondea el valor a los decimales especificados (3))
+        return (bytes / Math.pow(base, i)).toPrecision(decimals) + ' ' + units[i];
+    }
+        const result = fromBytesToFormattedSizeUnits(123456789);
+        console.log(result);
+</script>
+
+</html>
