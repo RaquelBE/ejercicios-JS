@@ -2,37 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 9</title>
 </head>
 
 <body>
-    <h1> Ejercicio 9 </h1>
-    <p> Crea una función que a partir de un objeto de entrada, retorne un objeto asegurándose que las claves del objeto
-        estén en lowercase.
-        La función debe tener un objeto como único parámetro.
-        Ejemplo de uso de la función:
+    <h1>Ejercicio 9</h1>
+    <p>
+        Crea una función que a partir de un objeto de entrada, retorne un objeto
+        asegurándose que las claves del objeto estén en lowercase. La función debe
+        tener un objeto como único parámetro. Ejemplo de uso de la función:
     </p>
     <code>
-        const myObject = { NamE: 'Charles', ADDress: 'Home Street' };
-        const myObjLowercase = toLowercaseKeys(myObject);
-        console.log(myObjLowercase); // { name: 'Charles', address: 'Home Street' }
+      const myObject = { NamE: 'Charles', ADDress: 'Home Street' }; const
+      myObjLowercase = toLowercaseKeys(myObject); console.log(myObjLowercase);
+      // { name: 'Charles', address: 'Home Street' }
     </code>
 </body>
 
 <script>
-    const newObj = {};
-    function keyToLowerCase(obj) {
-        for (const key in obj) {
-            if (Object.hasOwnProperty.call(obj, key)) {
-                newObj[key.toLowerCase()] = obj[key];
-            }
-        }
-        return newObj;
+    function toLowercaseKeys(param) {
+        let newArr = Object.keys(param).map((x) => x.toLowerCase());
+        return newArr;
     }
-    console.log(newObj);
-
+    const myObject = { name: "Charles", addres: "Home Street" };
+    const myObjLowercase = toLowercaseKeys(myObject);
+    console.log(myObjLowercase); 
 </script>
 
 </html>
